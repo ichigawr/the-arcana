@@ -328,6 +328,7 @@ const tarotDeck = [
 ];
 
 const card = document.getElementById("card");
+const cardInner = document.getElementById("card-inner");
 const drawBtn = document.getElementById("draw-btn");
 const cardName = document.getElementById("card-name");
 const cardDescription = document.getElementById("card-description");
@@ -337,8 +338,13 @@ const randomCard = () => {
   return tarotDeck[randomIndex];
 };
 
+let rotationDegree = 0;
+
 drawBtn.addEventListener("click", () => {
   card.classList.toggle("flip");
+  rotationDegree = (rotationDegree + 180) % (360 * tarotDeck.length);
+  console.log(rotationDegree);
+  cardInner.style.transform = `rotateY(${rotationDegree}deg)`;
 
   if (drawBtn.textContent === "Return") {
     drawBtn.textContent = "Draw";

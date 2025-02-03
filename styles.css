@@ -58,25 +58,21 @@ body {
     transition: transform 0.8s;
 }
 
-#card.flip #card-inner {
-    transform: rotateY(180deg);
-
-    #card-face img {
-        filter: drop-shadow(0 0 18px #fff);
-    }
+#card.flip #card-face img {
+    filter: drop-shadow(0 0 18px #fff);
 }
 
 #card-face,
 #card-back {
     position: absolute;
-    display: grid;
-    place-items: center;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
 }
 
 #card-face {
+    display: grid;
+    place-items: center;
     transform: rotateY(180deg);
 }
 
@@ -145,5 +141,17 @@ body {
 @keyframes fly-down {
     to {
         transform: scale(0.9);
+    }
+}
+
+@keyframes flip-face {
+    to {
+        transform: rotateY(180deg);
+    }
+}
+
+@keyframes flip-back {
+    to {
+        transform: rotateY(-180deg);
     }
 }
