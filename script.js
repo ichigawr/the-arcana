@@ -327,7 +327,7 @@ const tarotDeck = [
   },
 ];
 
-const card = document.getElementById("card-inner");
+const card = document.getElementById("card");
 const drawBtn = document.getElementById("draw-btn");
 const cardName = document.getElementById("card-name");
 const cardDescription = document.getElementById("card-description");
